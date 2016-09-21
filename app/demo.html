@@ -1,0 +1,28 @@
+  <p>A <code>&lt;google-signin&gt;</code> element looks like this button:</p>
+  <p><google-signin brand="google" client-id="1054047045356-j8pgqgls9vdef3rl09hapoicumbte0bo.apps.googleusercontent.com"></google-signin>
+or like this if plus scopes are present
+  <google-signin [brand] ="google-plus"></google-signin>
+  </p>
+  <p>Signin button can vary its appearance:</p>
+  <p>Width:
+    <google-signin [brand] ="google" [width] ="wide"></google-signin>
+    <google-signin [brand] ="google" [width] ="iconOnly"></google-signin>
+  Height:
+    <google-signin [brand]="google" [height]="tall"></google-signin>
+    <google-signin [brand]="google" [height]="standard"></google-signin>
+    <google-signin [brand]="google" [height]="short"></google-signin>
+  </p>
+  <p>
+  Theme:
+    <google-signin [brand]="google" [theme]="dark"></google-signin>
+    <google-signin [brand]="google" [theme]="light"></google-signin>
+    <google-signin [brand]="google-plus" [theme]="dark"></google-signin>
+    <google-signin [brand]="google-plus" [theme] ="light"></google-signin>
+    <google-signin [brand] ="google-plus"[theme]="light"></google-signin>
+  </p>
+  <!-- Demo the ability to use the google-signin-aware element. -->
+  <p><code>&lt;google-signin-aware&gt;</code> is a companion element.</p>
+  <p>You can use it inside your components to request additional scopes.</p>
+  <p>Every signin button will request all the scopes present in the document,
+  and change its appearance to match</p>
+  <p>For example, here is a signin-aware scope. You can change its scopes via popup</p>

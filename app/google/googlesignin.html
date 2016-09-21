@@ -1,0 +1,34 @@
+  <div id="button"
+    [ngClass] = "computeButtonClass()">
+      <div  *ngIf="computeButtonIsSignIn()">
+        <div class="button-content signIn" tabindex="0"
+            (click) ="signIn()" (keypress) ="signInKeyPress($event)">
+          <span class="icon iron-icon"><img src="{{brandIcon}}"></span>
+          <span class="buttonText">{{labelSignin}}</span>
+        </div>
+      </div>
+
+<!--     <div>
+      <template  if="{{_computeButtonIsSignIn(signedIn, needAdditionalAuth)}}">
+        <div class="button-content signIn" tabindex="0"
+            on-click="signIn" on-keydown="_signInKeyPress">
+          <span class="icon"><iron-icon icon="[[_brandIcon]]"></iron-icon></span>
+          <span class="buttonText">{{_labelSignin}}</span>
+        </div>
+      </template>
+      <template is="dom-if" if="{{_computeButtonIsSignOut(signedIn, needAdditionalAuth) }}">
+        <div class="button-content signOut" tabindex="0"
+            on-click="signOut" on-keydown="_signOutKeyPress">
+          <span class="icon"><iron-icon icon="[[_brandIcon]]"></iron-icon></span>
+          <span class="buttonText">{{labelSignout}}</span>
+        </div>
+      </template>
+      <template is="dom-if" if="{{_computeButtonIsSignOutAddl(signedIn, needAdditionalAuth) }}">
+        <div class="button-content signIn" tabindex="0"
+            on-click="signIn" on-keydown="_signInKeyPress">
+          <span class="icon"><iron-icon icon="[[_brandIcon]]"></iron-icon></span>
+          <span class="buttonText">{{labelAdditional}}</span>
+        </div>
+      </template>
+    </div> -->
+  </div>
