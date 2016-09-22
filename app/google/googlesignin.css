@@ -53,15 +53,12 @@ limitations under the License.
   height: 50px;
 }
 
-iron-icon {
-  width: 22px;
-  height: 22px;
-  margin: 6px;
-}
-
 .icon {
   display: inline-block;
   vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  margin: 6px;
 }
 
 #shadow {

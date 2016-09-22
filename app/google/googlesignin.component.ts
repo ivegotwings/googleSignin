@@ -1,31 +1,57 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {GoogleSigninConfiguration} from './googlesignin.configuration'
 
 @Component({
 	selector   : 'google-signin',
 	templateUrl: './app/google/googlesignin.html',
 	styleUrls  : ['./app/google/googlesignin.css'],
-	inputs : ['height', 'width', 'theme', 'brand', 'needAdditionalAuth']
 })
 
-export class GoogleSigninComponent{
+export class GoogleSigninComponent implements OnInit{
 
 	signedIn : boolean = false;
-	brandIcon : string = "./app/google/googlelogo.jpg";
-	labelSignin : string = "Sign in";
+	brandIcon : string = "";
+	labelSignin : string = "";
 
-	height: string;
-	width : string;
-	theme: string;
-	brand: string;
-	needAdditionalAuth: string;
+	@Input() height: string;
+	@Input() width : string;
+	@Input() theme: string;
+	@Input() brand: string;
+    
+    ngOnInit(){
+    	this.brandIcon   = this.computeIcon(this.brand);
+    	this.labelSignin = this.computeSigninLabel(this.width, this.brand);
+    }
+
+   	computeSigninLabel: function(width, brand) {
+      switch(width) {
+        case GoogleSigninConfiguration.WidthValue.WIDE:
+          return (brand == GoogleSigninConfiguration.BrandValue.PLUS) ?
+            GoogleSigninConfiguration.LabelValue.WIDE_PLUS : GoogleSigninConfiguration.LabelValue.WIDE;
+
+        case GoogleSigninConfiguration.WidthValue.STANDARD:
+          return GoogleSigninConfiguration.LabelValue.STANDARD;
+
+        case GoogleSigninConfiguration.WidthValue.ICON_ONLY:
+          return '';
+
+        default:
+          console.warn("bad width value: ", width);
+          return GoogleSigninConfiguration.LabelValue.STANDARD;
+      }
+  	}
+
+    computeIcon(brand) {
+        return "./app/google/" + brand + ".png";
+      }
 
 	computeButtonClass(){
 		this.height = (this.height) ? this.height : "tall";
 		this.width  = (this.width)  ? this.width  : "wide";
 		this.theme  = (this.theme)  ? this.theme  : "light";
-		this.brand  = (this.brand)  ? this.brand  : "google";
+		this.brand  = (this.brand)  ? this.brand  : "google-plus";
 
-        return "height-" + this.height + " width-" + this.width + " theme-" + this.theme + " signedIn-" + this.signedIn + " brand-" + this.brand +" additionalAuth-" + this.needAdditionalAuth; 
+        return "height-" + this.height + " width-" + this.width + " theme-" + this.theme + " signedIn-" + this.signedIn + " brand-" + this.brand; 
 	}
 
 	computeButtonIsSignIn(){

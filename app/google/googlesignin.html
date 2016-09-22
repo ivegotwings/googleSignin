@@ -1,9 +1,8 @@
-  <div id="button"
-    [ngClass] = "computeButtonClass()">
+  <div id="button" [ngClass] = "computeButtonClass()">
       <div  *ngIf="computeButtonIsSignIn()">
         <div class="button-content signIn" tabindex="0"
             (click) ="signIn()" (keypress) ="signInKeyPress($event)">
-          <span class="icon iron-icon"><img src="{{brandIcon}}"></span>
+          <img class = "icon" src="{{brandIcon}}" />
           <span class="buttonText">{{labelSignin}}</span>
         </div>
       </div>
