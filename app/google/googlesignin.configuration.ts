@@ -1,5 +1,5 @@
 export class GoogleSigninConfiguration{
-    static BrandValue : Object = {
+    static BrandValue : any = {
         GOOGLE: 'google',
         PLUS: 'google-plus'
     };
@@ -9,7 +9,7 @@ export class GoogleSigninConfiguration{
      * @readonly
      * @enum {string}
      */
-    static HeightValue : Object = {
+    static HeightValue : any = {
       SHORT: 'short',
       STANDARD: 'standard',
       TALL: 'tall'
@@ -20,7 +20,7 @@ export class GoogleSigninConfiguration{
      * @readonly
      * @enum {string}
      */
-    static LabelValue : Object = {
+    static LabelValue : any = {
       STANDARD: 'Sign in',
       WIDE: 'Sign in with Google',
       WIDE_PLUS: 'Sign in with Google+'
@@ -31,7 +31,7 @@ export class GoogleSigninConfiguration{
      * @readonly
      * @enum {string}
      */
-    static ThemeValue : Object = {
+    static ThemeValue : any = {
       LIGHT: 'light',
       DARK: 'dark'
     };
@@ -41,7 +41,7 @@ export class GoogleSigninConfiguration{
      * @readonly
      * @enum {string}
      */
-    static WidthValue : Object = {
+    static WidthValue : any = {
       ICON_ONLY: 'iconOnly',
       STANDARD: 'standard',
       WIDE: 'wide'
