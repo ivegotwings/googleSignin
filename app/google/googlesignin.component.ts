@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GoogleSigninConfiguration} from './googlesignin.configuration'
+import {GapiService} from './gapi.service';
 
 @Component({
 	selector   : 'google-signin',
@@ -17,6 +18,10 @@ export class GoogleSigninComponent implements OnInit{
 	@Input() width : string;
 	@Input() theme: string;
 	@Input() brand: string;
+
+    constructor(gapi: GapiService){
+
+    }    
     
     ngOnInit(){
       this.height = (this.height) ? this.height : "standard";
