@@ -17,11 +17,7 @@ export class GoogleSigninComponent implements OnInit{
 	@Input() height: string;
 	@Input() width : string;
 	@Input() theme: string;
-	@Input() brand: string;
-
-    constructor(gapi: GapiService){
-
-    }    
+	@Input() brand: string;   
     
     ngOnInit(){
       this.height = (this.height) ? this.height : "standard";
