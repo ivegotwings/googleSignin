@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GoogleSigninConfiguration} from './googlesignin.configuration'
-import {GapiService} from './gapi.service';
 
 @Component({
 	selector   : 'google-signin',
